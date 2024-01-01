@@ -38,25 +38,18 @@ class _HomePageState extends State<HomePage> {
                 final todo = todos[index];
                 return ListTile(
                   title: Text(todo.title),
-                  // leading: Checkbox(
-                  //   value: todo.completed,
-                  //   onChanged: (value) {
-                  // final updatedTodo = todo.copyWith(completed: value);
-                  // _todoBloc.add(UpdateTodo(updatedTodo));
-                  //   },
-                  // ),
+              
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
                         icon: const Icon(Icons.edit),
                         onPressed: () {
-                          // _todoBloc.add(UpdateTodo(todo));
                           _showAddTodoDialog(context, true, todo);
                         },
                       ),
                       IconButton(
-                        icon: const Icon(Icons.delete),
+                        icon:  Icon(Icons.delete,color: Colors.red.withOpacity(0.5),),
                         onPressed: () {
                           _todoBloc.add(DeleteTodo(todo.id!));
                         },

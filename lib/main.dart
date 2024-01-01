@@ -22,10 +22,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return     MultiBlocProvider(
           providers: [
-           //BlocProvider(
-           //  create: (context) =>   AuthenticationBloc(AuthenticationRepositoryImpl())
-           //   ..add(AuthenticationStarted()),
-           // ),
             BlocProvider<TodoBloc>(
               create: (context) => TodoBloc(FirestoreService()),
             ),
