@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_demo/blocs/auth/auth_event.dart';
 import 'package:firebase_demo/blocs/auth/auth_state.dart';
 import '../../repository/auth_repo.dart';

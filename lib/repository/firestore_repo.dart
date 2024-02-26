@@ -20,6 +20,8 @@ class FirestoreService {
         return Todo(
           id: doc.id,
           title: data['title'],
+          description: data['description'],
+          date: data['date'],
           completed: data['completed'],
         );
       }).toList();
@@ -32,7 +34,10 @@ class FirestoreService {
         .collection('user_todos')
         .add({
       'title': todo.title,
+      'description':todo.description,
+      'date':todo.date,
       'completed': todo.completed,
+    
     });
   }
 
@@ -43,6 +48,8 @@ class FirestoreService {
         .doc(todoId)
         .update({
       'title': todo.title,
+        'description':todo.description,
+      'date':todo.date,
       'completed': todo.completed,
     });
   }

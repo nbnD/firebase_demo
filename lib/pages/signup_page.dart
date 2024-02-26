@@ -37,10 +37,10 @@ class _SignUpState extends State<SignUp> {
       body: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
-            // if (snapshot.hasData) {
+            if (snapshot.hasData) {
               print("User Data email");
               print(snapshot.data!.email);
-            // }
+            }
             return BlocConsumer<AuthBloc, AuthState>(
               listener: (context, state) {
                 if (state is Authenticated) {
